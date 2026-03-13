@@ -1,4 +1,5 @@
 # Node
+
 node_modules/
 .env
 
@@ -17,3 +18,5 @@ android/.gradle
 
 # macOS
 .DS_Store
+
+
