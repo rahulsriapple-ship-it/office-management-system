@@ -1,0 +1,108 @@
+const registerEmployeeSchema = {
+ body:{
+  name:{
+   required:true,
+   type:"string",
+   trim:true,
+   minLength:2,
+   maxLength:120
+  },
+  email:{
+   required:true,
+   type:"string",
+   trim:true,
+   pattern:/^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+   patternMessage:"email must be a valid email address"
+  },
+  password:{
+   required:true,
+   type:"string",
+   minLength:8,
+   maxLength:64
+  },
+  departmentId:{
+   required:true,
+   type:"string",
+   trim:true
+  },
+  designation:{
+   type:"string",
+   trim:true,
+   maxLength:100
+  },
+  phone:{
+   type:"string",
+   trim:true,
+   minLength:7,
+   maxLength:20
+  },
+  employeeCode:{
+   type:"string",
+   trim:true,
+   maxLength:50
+  },
+  joiningDate:{
+   type:"string",
+   trim:true
+  },
+  role:{
+   type:"string",
+   trim:true,
+   enum:["EMPLOYEE","MANAGER"]
+  }
+ }
+}
+
+const updateEmployeeSchema = {
+ body:{
+  name:{
+   required:true,
+   type:"string",
+   trim:true,
+   minLength:2,
+   maxLength:120
+  },
+  email:{
+   required:true,
+   type:"string",
+   trim:true,
+   pattern:/^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+   patternMessage:"email must be a valid email address"
+  },
+  departmentId:{
+   required:true,
+   type:"string",
+   trim:true
+  },
+  designation:{
+   type:"string",
+   trim:true,
+   maxLength:100
+  },
+  phone:{
+   type:"string",
+   trim:true,
+   minLength:7,
+   maxLength:20
+  },
+  employeeCode:{
+   type:"string",
+   trim:true,
+   maxLength:50
+  },
+  joiningDate:{
+   type:"string",
+   trim:true
+  },
+  role:{
+   type:"string",
+   trim:true,
+   enum:["EMPLOYEE","MANAGER"]
+  }
+ }
+}
+
+module.exports = {
+ registerEmployeeSchema,
+ updateEmployeeSchema
+}
